@@ -3,7 +3,7 @@
 
 ## 一、初始化
 
-> 最后一个参数 1.19.5 用于指定 kubenetes 版本，支持所有 1.19.x 版本的安装
+> sh命令最后一个参数`1.19.5`用于安装指定Kubenetes版本
 
 ```
 在所有节点安装执行（master、node等）
@@ -25,9 +25,9 @@ curl -sSL https://raw.githubusercontent.com/matt-pei/Deployment/main/install_kub
 
 
 ```
-export MASTER_IP=
-# 替换 apiserver.demo 为您想要的 dnsName
-export APISERVER_NAME=
+export MASTER_IP=0.0.0.0
+# 替换 apiserver.demo 为您想要的局域网域名
+export APISERVER_NAME=apiserver.demo
 # Kubernetes容器组所在的网段,该网段安装完成后,由kubernetes创建,事先并不存在于您的物理网络中
 export POD_SUBNET=10.100.0.1/16
 echo "${MASTER_IP}    ${APISERVER_NAME}" >> /etc/hosts

@@ -6,6 +6,9 @@ sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/' /etc/selinux/config
 sed -i 's/^SELINUX=permissive$/SELINUX=disabled/' /etc/selinux/config
 systemctl disable firewalld.service
 systemctl stop firewalld.service
+# 关闭NetworkManager
+systemctl stop NetworkManager.service
+systemctl disable NetworkManager.service
 
 # 关闭swap交换分区
 swapoff -a          # 临时关闭
